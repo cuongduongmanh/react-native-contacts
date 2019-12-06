@@ -229,7 +229,7 @@ public class ContactsProvider {
     public Integer getContactsCount() {
         Cursor cursor =  contentResolver.query(ContactsContract.Contacts.CONTENT_URI, null, null, null, null);
         int count = cursor.getCount();
-        
+
         return count;
     }
 
@@ -546,7 +546,7 @@ public class ContactsProvider {
             WritableMap contact = Arguments.createMap();
             contact.putString("recordID", contactId);
             contact.putString("rawContactId", rawContactId);
-            contact.putString("givenName", TextUtils.isEmpty(givenName) ? displayName : givenName);
+            contact.putString("givenName", givenName);
             contact.putString("displayName", displayName);
             contact.putString("middleName", middleName);
             contact.putString("familyName", familyName);
